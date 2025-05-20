@@ -7,7 +7,7 @@ class Solution {
     for(int i = 1;i<nums.length;i++){
         int temp = max;
         max = Math.max(nums[i], Math.max(max*nums[i], min*nums[i]));
-        min = Math.min(nums[i], Math.min(temp*nums[i], minEndingHere * nums[i]));
+        min = Math.min(nums[i], Math.min(temp*nums[i], min * nums[i]));
         maxh = Math.max(maxh, max);
     }
     return maxh;
