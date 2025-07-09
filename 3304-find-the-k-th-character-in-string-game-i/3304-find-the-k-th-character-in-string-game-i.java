@@ -1,19 +1,17 @@
 class Solution {
-    public char kthCharacter(int k) {
-         StringBuilder word = new StringBuilder("a");
-        int n = 1;
-        while (n < k) {
-            n = word.length();
-            for (int i = 0; i < n; i++) {
-                char ch = word.charAt(i);
-                if (ch == 'z') {
-                    word.append('a');
-                } else {
-                    word.append((char)(ch + 1));
-                }
+    public int findLucky(int[] arr) {
+        HashMap<Integer,Integer > ls=new HashMap<>();
+        int n=arr.length;
+        Arrays.sort(arr);
+        for(int i=0;i<n;i++){
+            ls.put(arr[i],ls.getOrDefault(arr[i],0)+1);
+        }
+        int ans=-1;
+        for(Map.Entry<Integer,Integer> e:ls.entrySet()){
+            if(e.getKey()==e.getValue()){
+                ans=e.getKey();
             }
         }
-        
-        return word.charAt(k - 1);
+        return ans;
     }
 }
