@@ -4,9 +4,7 @@ class Solution {
     public int maximumUniqueSubarray(int[] nums) {
         ArrayList<Integer> ls = new ArrayList<>();
         Set<Integer> set = new HashSet<>();
-
         int start = 0, maxSum = 0, currSum = 0;
-
         for (int i = 0; i < nums.length; i++) {
             while (set.contains(nums[i])) {
                 set.remove(ls.get(0));
@@ -19,8 +17,6 @@ class Solution {
             currSum += nums[i];
             maxSum = Math.max(maxSum, currSum);
         }
-
-        System.out.println(start + " " + ls.size());
         return maxSum;
     }
 }
