@@ -14,7 +14,9 @@ class Solution {
         if(arr[i]==arr[j]) return  i-j;
         else return arr[i]-arr[j];
         });
-        
+        for(int i=0;i<n;i++){ 
+            ls.offer(i);
+        }
        int ans[]=new int[k];
        for(int i=0;i<k;i++){
         ans[i]=ls.poll();
