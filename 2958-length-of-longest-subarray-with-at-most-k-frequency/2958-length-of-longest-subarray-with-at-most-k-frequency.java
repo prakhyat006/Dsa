@@ -13,7 +13,7 @@ class Solution {
             }
             else if(ls.get(nums[j])<k)
             {
-                ls.put(nums[j],ls.getOrDefault(nums[j],0)+1);
+                ls.put(nums[j],ls.get(nums[j])+1);
                 j++;
             }
             else {
